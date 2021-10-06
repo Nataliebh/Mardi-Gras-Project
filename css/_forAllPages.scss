@@ -1,0 +1,331 @@
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+  background-image: url(/img/gallery16.jpg);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-attachment: fixed;
+  background-size: auto;
+  background-size: cover;
+}
+%a-link {
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    color: black;
+  }
+}
+
+%selection {
+  &::selection {
+    background-color: $colorYellow;
+    color: $colorBlack;
+  }
+}
+
+%a {
+  text-decoration: none;
+  color: $colorWhite;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+%fab {
+  margin: 0 10px 15px 0;
+  margin-top: 37px;
+  transition: all 0.3s ease-in-out;
+  color: $colorYellow;
+
+  &:hover {
+    color: $colorPurple;
+  }
+}
+
+%button {
+  background-color: $colorPurple;
+  font-size: 1rem;
+  border-radius: 8px;
+  padding: 7px 15px;
+  color: $colorWhite;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.3);
+  border-style: noe;
+  &:hover {
+    background-color: $colorGreen;
+    transition: all 0.3s ease-in-out;
+    color: $colorBlack;
+    box-shadow: inset 5px 5px 5px rgba(50, 50, 50, 0.3);
+  }
+}
+
+// ----------Navbar---------------
+.navbar {
+  letter-spacing: 0.1rem;
+  background: rgba(0, 0, 0, 0.7) !important; //not working
+
+  .navbar-brand img {
+    height: 3rem;
+  }
+
+  .navbar-toggler {
+    left: 0;
+  }
+  .nav-item {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-family: $textFont;
+    cursor: pointer;
+    margin-right: 0;
+  }
+
+  .navbar-nav li {
+    padding-right: 0.9rem;
+  }
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  padding-top: 0.8rem;
+  transition: all 0.3s ease-in-out;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: $colorPurple !important;
+}
+
+// media - navbar------------
+@include tablet {
+  #logo-img {
+    position: absolute;
+    right: 0;
+    top: 10px;
+  }
+
+  #hamburger {
+    position: absolute;
+    left: 0;
+    top: 10px;
+  }
+
+  .navbar {
+    min-height: 60px;
+  }
+}
+
+@include mobile {
+  #logo-img {
+    position: absolute;
+    right: 0;
+    top: 10px;
+  }
+
+  #hamburger {
+    position: absolute;
+    left: 0;
+    top: 10px;
+  }
+
+  .navbar {
+    min-height: 60px;
+  }
+}
+
+// button Scroll 'to top'
+#button-top {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  transition: all 0.4s;
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+
+  .fas {
+    color: $colorPurple;
+    background-color: $colorWhite;
+    padding: 10px;
+    border-radius: 50%;
+  }
+}
+
+#button-top.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+// -------Footer------
+#theFooter {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 50px 100px;
+  background-color: #444;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    .part {
+      margin-right: 30px;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      @extend %selection;
+    }
+    .footer-about {
+      margin-right: 30px;
+      width: 40%;
+      @extend %selection;
+
+      p {
+        color: #999;
+      }
+    }
+
+    .social-media {
+      margin-top: 20px;
+      display: flex;
+
+      li {
+        list-style: none;
+
+        a {
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 20px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .quick-links {
+    position: relative;
+    width: 25%;
+
+    ul li {
+      list-style: none;
+
+      a {
+        color: #999;
+        text-decoration: none;
+        margin-bottom: 10px;
+        display: inline-block;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: $colorYellow;
+        }
+      }
+    }
+  }
+
+  .contact {
+    width: calc(35% - 60px);
+    margin-right: 0 !important;
+
+    span {
+      color: #999;
+      @extend %selection;
+    }
+  }
+  .info {
+    position: relative;
+  }
+}
+
+.copy-right {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background-color: rgb(54, 54, 54);
+  color: $colorWhite;
+  @extend %selection;
+}
+
+@include tablet {
+  #theFooter {
+    padding: 40px;
+
+    .container {
+      flex-direction: column;
+
+      .part {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+      .footer-about,
+      .quick-links,
+      .contact {
+        width: 100%;
+      }
+
+      .social-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  .copy-right {
+    padding: 50px 0;
+  }
+}
+
+@include mobile {
+  #theFooter {
+    padding: 40px;
+
+    .container {
+      flex-direction: column;
+
+      .part {
+        margin-right: 0;
+        margin-bottom: 40px;
+      }
+      .footer-about,
+      .quick-links,
+      .contact {
+        width: 100%;
+      }
+
+      .social-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  .copy-right {
+    padding: 50px 0;
+  }
+}

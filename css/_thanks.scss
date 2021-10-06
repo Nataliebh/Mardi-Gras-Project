@@ -1,0 +1,45 @@
+.thanksPage-wrap {
+  height: 100vh;
+}
+
+.wrap-thanks {
+  height: 300px;
+  padding: 60px;
+  margin: 100px auto;
+  background-color: $colorWhite;
+  text-align: center;
+
+  .h1-thanks {
+    font-size: 1em;
+    color: $colorBlack;
+  }
+}
+
+// --------Media----------
+@include tablet {
+  .thanksPage-wrap {
+    height: 100vh;
+
+    .wrap-thanks {
+      margin-top: 90px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+@include mobile {
+  .thanksPage-wrap {
+    height: 100vh;
+
+    .wrap-thanks {
+      margin-top: 90px;
+      width: 100%;
+      text-align: center;
+
+      h1 {
+        font-size: 1.1em;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+body {
+  margin: auto;
+  text-align: center;
+  font-family: $textFont;
+}
+
+.gallery-header h1 {
+  font-family: $headerFont;
+  color: $colorBlack;
+  background-color: $colorWhite;
+  padding: 40px;
+  font-size: 3em;
+  margin-top: 100px;
+}
+
+.item img {
+  filter: grayscale(0.3) brightness(0.7);
+  border-radius: 7px;
+  transition: 0.3s linear;
+  cursor: pointer;
+}
+
+.item img:hover {
+  filter: grayscale(0) brightness(1);
+}
+
+// ------videos-------
+.video-container {
+  margin: auto;
+  text-align: center;
+}
+
+// ------media-----
+@include tablet {
+  iframe {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
+@include mobile {
+  iframe {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}

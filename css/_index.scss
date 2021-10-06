@@ -1,0 +1,262 @@
+.index-page {
+  background-color: #bcbcbc;
+}
+
+// -----------Carousel--------------
+// pic instead of carousel (responsive)
+#headPic {
+  margin-top: 50px;
+  display: none;
+}
+
+.carousel-item {
+  background: no-repeat scroll center scroll;
+  background-size: cover;
+
+  .btn {
+    @extend %button;
+    a {
+      @extend %a-link;
+    }
+  }
+}
+
+.carousel-item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: $colorBlack;
+  opacity: 0.5;
+}
+
+.carousel-caption {
+  margin-bottom: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-family: $textFont;
+}
+
+.carousel-caption p {
+  font-size: 1.7em;
+}
+
+// --------section counter---------
+.counter-wrapper {
+  align-items: center;
+  padding: 0 150px;
+
+  .counter-content {
+    display: flex;
+    margin: 50px 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    .counter-item {
+      background-color: #dbe5e6;
+      width: 220px;
+      height: 220px;
+      border: 1px dashed #000 !important;
+      padding: 30px 30px 40px 30px;
+
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+      font-family: $textFont;
+      color: $colorBlack;
+      font-family: $textFont;
+      border-radius: 50%;
+
+      &:hover {
+        border-radius: 10px;
+      }
+
+      .icon {
+        font-size: 3rem;
+        color: $colorBlack;
+      }
+
+      .counter {
+        font-family: $textFont;
+        font-size: 1rem;
+      }
+
+      .counter-text {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+// -----------Main Section---------------
+.MardiGras-wrapper {
+  width: 100%;
+
+  #site-content {
+    background-color: #dbe5e6;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 90px;
+    line-height: 1.5;
+    margin-bottom: 120px;
+    text-align: center;
+    h1 {
+      font-family: $headerFont;
+      margin: 20px;
+      padding: 20px 20px 40px 20px;
+    }
+
+    p {
+      font-size: 1em;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+    .btn-main {
+      @extend %button;
+      margin-bottom: 30px;
+      a {
+        @extend %a-link;
+      }
+    }
+  }
+}
+// -------Sponsers cards------------
+#sponsers {
+  background-color: #dbe5e6;
+  padding: 30px 0;
+  margin: auto;
+  text-align: center;
+
+  h1 {
+    font-family: $headerFont;
+    padding: 40px 0 30px 0;
+    @extend %selection;
+  }
+
+  .card {
+    margin: 20px 10px;
+  }
+
+  .card-title {
+    text-align: center;
+    @extend %selection;
+  }
+  .card-img-top {
+    height: 165px;
+  }
+}
+
+.card-body {
+  text-align: center;
+  height: 300px;
+  box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .card-title {
+    font-family: $headerFont;
+  }
+
+  .card-text {
+    font-size: 0.8em;
+    margin: 20px 10px;
+    @extend %selection;
+  }
+
+  .btn-link {
+    bottom: 0;
+    text-decoration: none;
+    width: 60%;
+    background: white;
+    @extend %button;
+    a {
+      @extend %a-link;
+    }
+  }
+}
+
+.social-media {
+  .fab {
+    @extend %fab;
+  }
+}
+
+// -----media------------
+
+@include tablet {
+  .counter-content {
+    display: flex;
+    flex-direction: column;
+
+    .counter-item {
+      margin-bottom: 100px;
+
+      .item1 {
+        order: 1;
+      }
+
+      .item2 {
+        order: 1;
+      }
+
+      .item3 {
+        order: 1;
+      }
+    }
+  }
+
+  .MardiGras-wrapper {
+    #site-content {
+      background-color: #dbe5e6;
+      margin: 0 auto;
+      padding: 0 8px;
+      line-height: 1.5;
+    }
+  }
+}
+
+@include mobile {
+  #headPic {
+    width: 100%;
+    display: block;
+  }
+  .carousel {
+    display: none;
+  }
+  .counter-content {
+    display: flex;
+    flex-direction: column;
+
+    .counter-item {
+      margin-bottom: 100px;
+
+      .item1 {
+        order: 1;
+      }
+      .item2 {
+        order: 1;
+      }
+      .item3 {
+        order: 1;
+      }
+    }
+  }
+
+  .MardiGras-wrapper {
+    #site-content {
+      background-color: #dbe5e6;
+      margin: 0 auto;
+      padding: 0 8px;
+      line-height: 1.5;
+    }
+  }
+}

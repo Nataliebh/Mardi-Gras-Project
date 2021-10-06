@@ -1,0 +1,174 @@
+// -----About Mardi Gras------
+.festival-wrapper {
+  font-family: $textFont;
+  background: url("/img/main2.jpg") no-repeat left;
+  background-size: 35%;
+  overflow: hidden;
+  padding: 80px 0;
+
+  .about-festival {
+    margin-right: 40px;
+    width: 60%;
+    float: right;
+    background-color: #fdfdfd;
+    padding: 50px;
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  h1 {
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-family: $headerFont;
+    @extend %selection;
+  }
+
+  .text {
+    font-size: 1em;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+    @extend %selection;
+  }
+
+  .btn-trivia {
+    @extend %button;
+    a {
+      text-decoration: none;
+      color: $colorWhite;
+    }
+  }
+  #aboutMardiPic {
+    display: none;
+  }
+}
+
+// -----About Mayor------
+.mayor-wrapper {
+  font-family: $textFont;
+  background: url("/img/mayor.jpg") no-repeat right;
+  background-size: 35%;
+  overflow: hidden;
+  background-size: 35%;
+  margin-bottom: 30px;
+
+  .about-mayor {
+    margin-left: 40px;
+    padding: 20px;
+    width: 60%;
+    float: left;
+    background-color: #fdfdfd;
+    padding: 50px;
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  h1 {
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-family: $headerFont;
+    @extend %selection;
+  }
+
+  .text,
+  p {
+    font-size: 1.1em;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+    @extend %selection;
+  }
+
+  #mayorPic {
+    display: none;
+  }
+}
+
+// --------------media------------------------
+
+@include tablet {
+  .festival-wrapper {
+    background-size: 0%;
+
+    h1 {
+      padding-top: 30px;
+      text-align: center;
+    }
+    .about-festival {
+      text-align: justify;
+      margin: auto;
+      width: 100%;
+      background-color: #fdfdfd;
+      padding: 10px;
+    }
+    .trivia-link {
+      text-align: center;
+    }
+    #aboutMardiPic {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .mayor-wrapper {
+    background-size: 0%;
+    h1 {
+      text-align: center;
+    }
+    .about-mayor {
+      text-align: justify;
+      margin: auto;
+      width: 100%;
+    }
+
+    #mayorPic {
+      display: block;
+      width: 50%;
+      margin: auto;
+    }
+  }
+}
+
+// mobile-----------------
+@include mobile {
+  .festival-wrapper {
+    background-size: 0%;
+
+    h1 {
+      padding-top: 30px;
+      text-align: center;
+    }
+    .about-festival {
+      text-align: justify;
+      margin: auto;
+      width: 100%;
+      background-color: #fdfdfd;
+      padding: 10px;
+    }
+    .trivia-link {
+      text-align: center;
+    }
+    #aboutMardiPic {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .mayor-wrapper {
+    background-size: 0%;
+    h1 {
+      text-align: center;
+    }
+    .about-mayor {
+      text-align: justify;
+      margin: auto;
+      width: 100%;
+      padding: 10px;
+    }
+
+    #mayorPic {
+      display: block;
+      width: 100%;
+    }
+  }
+}

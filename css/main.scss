@@ -1,0 +1,27 @@
+// fonts:
+$headerFont: "Pattaya", sans-serif;
+$headerFontSecond: "Henny Penny", cursive;
+$textFont: "Roboto", sans-serif;
+
+// colors:
+$colorPurple: #9453a6;
+$colorGreen: #8cbf3f;
+$colorYellow: #f2cc0f;
+$colorWhite: #f2f2f2;
+$colorBlack: #0d0d0d;
+
+// import fonts:
+@import url("https://fonts.googleapis.com/css2?family=Pattaya&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+// pages:
+@import "mixinMedia";
+@import "forAllPages";
+@import "index";
+@import "about";
+@import "media";
+@import "faq";
+@import "contact";
+@import "thanks";
+@import "trivia";

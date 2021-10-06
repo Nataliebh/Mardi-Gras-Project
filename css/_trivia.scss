@@ -1,0 +1,96 @@
+.trivia-wrapper {
+  font-family: $textFont;
+  max-width: 700px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  .quiz-box {
+    background-color: #ccc;
+    margin: 0 auto;
+    margin: 80px 0 20px 0;
+    padding: 5px 20px 20px 20px;
+    border-radius: 8px;
+    border: 2px solid $colorPurple;
+    text-align: center;
+    min-height: 500px;
+
+    h1 {
+      margin-top: 50px;
+      font-family: $headerFontSecond;
+      text-align: center;
+      padding: 20px 0;
+      @extend %selection;
+    }
+
+    #quiz {
+      text-align: left;
+      .question {
+        @extend %selection;
+        margin: 10px;
+      }
+
+      // .answers
+    }
+    #start {
+      margin-top: 50px;
+      @extend %button;
+    }
+    ul {
+      list-style-type: none;
+    }
+    #submit,
+    #playAgain {
+      display: none;
+      @extend %button;
+      margin: auto;
+      margin-top: 20px;
+      a {
+        @extend %a;
+      }
+    }
+
+    .reveal {
+      display: block;
+      background-color: $colorGreen;
+      width: 70%;
+      text-align: center;
+      margin: 30px auto;
+      padding: 10px 0;
+      border-radius: 10px;
+      font-family: $textFont;
+    }
+
+    .playAgain {
+      @extend %button;
+    }
+  }
+}
+
+// --------Media----------
+@include tablet {
+  margin: 0 auto;
+  .trivia-wrapper {
+    .quiz-box {
+      margin-top: 0;
+      width: 70%;
+      text-align: center;
+    }
+  }
+}
+
+// mobile----------
+@include mobile {
+  .trivia-wrapper {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    .quiz-box {
+      margin: 0;
+      border: none;
+      border-radius: 0%;
+      width: 100%;
+    }
+  }
+}

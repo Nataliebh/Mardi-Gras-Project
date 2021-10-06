@@ -1,0 +1,93 @@
+.container-contact {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 25px;
+  box-shadow: 0 0 13px 4px grey;
+  max-width: 80%;
+  margin: 90px auto;
+  margin-bottom: 70px;
+  border-radius: 8px;
+
+  .fab {
+    @extend %fab;
+  }
+
+  .form-control {
+    margin: 10px;
+  }
+
+  .container-form {
+    h1 {
+      font-family: $headerFont;
+      @extend %selection;
+    }
+
+    .form-group {
+      label {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+      input {
+        font-size: 0.8em;
+      }
+    }
+  }
+  .form-group.succsess input {
+    border-color: $colorPurple;
+  }
+
+  .form-group.error input,
+  .form-group.error #userMessage {
+    border-color: red;
+  }
+
+  .form-group small {
+    color: red;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+  }
+
+  .form-group.error small {
+    visibility: visible;
+  }
+
+  .btn-contact {
+    width: 100%;
+    margin: 10px;
+    @extend %button;
+    &:hover {
+      color: $colorBlack;
+    }
+    padding: 10px 0;
+  }
+}
+
+.button-top {
+  position: fixed;
+  display: block;
+  border-radius: 50%;
+  right: 25px;
+  bottom: 25px;
+  transition: all 0.4s;
+  .fas {
+    border-radius: 50%;
+    color: $colorPurple;
+    padding: 7px;
+    background-color: $colorWhite;
+    opacity: 0;
+  }
+}
+
+.button-top.scroll {
+  opacity: 1;
+  pointer-events: auto;
+  bottom: 30px;
+}
